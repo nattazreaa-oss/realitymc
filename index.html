@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RealityMC - Economy x Slimefun</title>
+<meta name="description" content="RealityMC - Economy x Slimefun Minecraft Server. Balanced economy, community events, and fair play.">
+<meta name="author" content="RealityMC">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="minecraft server indonesia, realitymc, survival economy, minecraft 1.21.1, minecraft java bedrock">
+<link rel="canonical" href="https://realitymc.xyz">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="RealityMC - Economy x Slimefun">
+<meta property="og:description" content="Server Minecraft di Indonesia dengan Arena, Cross-Play, Discord, Economy, Events, Land claim.">
+<meta property="og:image" content="https://i.imgur.com/OYa93ld.png">
+<meta property="og:url" content="https://realitymc.xyz">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RealityMC — Survival Economy">
+<meta name="twitter:description" content="Main dan bangun ekonomi di dunia RealityMC!">
+<meta name="twitter:image" content="https://i.imgur.com/OYa93ld.png">
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGameServer",
+  "name": "RealityMC — Survival Economy",
+  "url": "https://realitymc.xyz",
+  "description": "Server Minecraft economy dengan komunitas aktif, jobs, dan event mingguan.",
+  "game": {
+    "@type": "VideoGame",
+    "name": "Minecraft"
+  },
+  "serverStatus": "Online",
+  "author": {
+    "@type": "Organization",
+    "name": "RealityMC Team"
+  },
+  "inLanguage": "id"
+}
+</script>
+
+<link rel="icon" href="https://i.imgur.com/MUuCPqr.png" type="image/png">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        realityRed: '#FF3D00',
+        realityOrange: '#FF9100',
+        realityYellow: '#FFC400',
+        realityGray: '#1a1a1a',
+        realityText: '#f3f4f6'
+      },
+      fontFamily: {
+        heading: ['Poppins', 'sans-serif'],
+        body: ['Inter', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+/* =========================================================
+   REALITYMC — PREMIUM NEON ORANGE FIRE UI
+   ========================================================= */
+
+/* ===== BASE ===== */
+body {
+  font-family: Inter, sans-serif;
+  background: radial-gradient(circle at top, #1a0000 0%, #080000 70%, #050000 100%);
+  color: #f3f4f6;
+  scroll-behavior: smooth;
+}
+body::before {
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: .12;
+  pointer-events: none;
+}
+
+/* ===== GLOBAL FIRE GLOW ===== */
+:root {
+  --fire1: #FF3D00;
+  --fire2: #FF9100;
+  --fire3: #FFC400;
+}
+
+.fire-text {
+  background: linear-gradient(90deg, var(--fire1), var(--fire2), var(--fire3));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 18px rgba(255,150,0,0.7);
+}
+
+.glow-text {
+  text-shadow:
+    0 0 2px rgba(255,120,0,.4),
+    0 0 6px rgba(255,100,0,.25);
+}
+
+/* REAL TEXT GRADIENT WITHOUT BLUR */
+.text-gradient {
+  background: linear-gradient(90deg, var(--fire1), var(--fire2), var(--fire3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none; /* biar tidak blur */
+}
+
+/* Optional: soft glow */
+.text-gradient-glow {
+  background: linear-gradient(90deg, var(--fire1), var(--fire2), var(--fire3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(255,140,0,0.45);
+}
+
+/* ===== HERO TITLE SUPER GLOW ===== */
+.hero-title {
+  text-shadow:
+    0 0 20px rgba(255,140,0,0.9),
+    0 0 50px rgba(255,120,0,0.7),
+    0 0 90px rgba(255,100,0,0.6);
+}
+
+/* ===== GLASS PANEL PREMIUM ===== */
+.glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,150,0,0.25);
+  backdrop-filter: blur(18px);
+  border-radius: 1.2rem;
+  transition: .35s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 22px rgba(255,120,0,0.18);
+}
+
+.glass:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 0 40px rgba(255,150,0,0.38);
+}
+
+/* Light Sweep */
+.glass::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:70%;
+  height:100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  transform: skewX(-20deg);
+  transition: .45s ease;
+}
+.glass:hover::before {
+  left:130%;
+}
+
+/* ===== BUTTONS ===== */
+.btn-glow {
+  transition: .3s ease;
+}
+.btn-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 28px rgba(255,150,0,0.6);
+}
+
+.btn-fire {
+  background: linear-gradient(90deg, var(--fire1), var(--fire2), var(--fire3));
+  box-shadow: 0 0 20px rgba(255,120,0,.55);
+}
+.btn-fire:hover {
+  box-shadow: 0 0 40px rgba(255,145,0,.9);
+}
+
+/* ===== FIRE BORDER CARDS ===== */
+.fire-card {
+  border: 1px solid rgba(255,150,0,0.3);
+  background: rgba(0,0,0,.5);
+  border-radius: 1rem;
+  padding: 1.4rem;
+  transition: .3s ease;
+}
+.fire-card:hover {
+  border-color: rgba(255,170,0,0.9);
+  box-shadow: 0 0 35px rgba(255,150,0,0.38);
+}
+
+/* ===== CONNECT SECTION SPECIAL ===== */
+.connect-card {
+  position: relative;
+  overflow:hidden;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,145,0,0.25);
+  border-radius: 1.2rem;
+  backdrop-filter: blur(20px);
+  transition: .35s ease-in-out;
+  box-shadow: 0 0 28px rgba(255,130,0,0.25);
+}
+
+.connect-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 50px rgba(255,150,0,0.5);
+}
+
+.connect-card::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-140%;
+  width:65%;
+  height:100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  transform: skewX(-20deg);
+  transition:.45s ease;
+}
+.connect-card:hover::before {
+  left:140%;
+}
+
+/* ===== NAV FIRE HOVER ===== */
+header nav a:hover {
+  background: linear-gradient(90deg, var(--fire1), var(--fire2), var(--fire3));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgba(255,140,0,0.7);
+}
+
+/* ===== FOOTER HOVER ===== */
+footer a:hover {
+  color: var(--fire3);
+  text-shadow: 0 0 12px rgba(255,150,0,.7);
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  animation: fadeIn .9s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(14px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+</style>
+
+
+</head>
+<body class="bg-realityGray text-realityText">
+
+<!-- HEADER -->
+<header class="w-full sticky top-0 z-50 bg-black/50 backdrop-blur-lg shadow-md fade-in">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <img id="logo-img" src="https://i.imgur.com/OYa93ld.png" alt="RealityMC" class="w-12 h-12 rounded-md shadow-lg">
+      <div>
+        <h1 class="text-xl font-heading text-white glow-text">RealityMC</h1>
+        <p class="text-xs text-gray-400">Official Website</p>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a href="#info">Server Info</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#staff">Staff</a>
+      <a href="#store">Store</a>
+      <a href="#connect" class="px-4 py-2 rounded-full accent-gradient text-black font-semibold btn-glow">Join</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-[86vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-25">
+      <source src="https://cdn.pixabay.com/video/2023/02/09/150293-796233301_large.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#1a0000]/85 via-[#0a0000]/60 to-[#050000]/80"></div>
+  </div>
+  <div class="relative z-10 text-center max-w-3xl px-6 fade-in">
+    <h2 class="text-5xl md:text-6xl font-heading font-extrabold glow-text mb-4">
+      Welcome to <span class="text-gradient-glow">RealityMC</span>
+    </h2>
+    <p class="text-gray-300 text-lg mb-8 leading-relaxed">Balanced economy, fair PvP, player-run shops, and weekly events.<br>Join the community and build your legacy!</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#connect" class="px-6 py-3 rounded-full bg-white text-black font-semibold shadow btn-glow">Play now</a>
+      <a href="https://minecraft-mp.com/server/349970/vote/" target="_blank" class="px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 btn-glow">Vote Server</a>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info" class="py-16 bg-gradient-to-b from-transparent to-realityGray/40">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-heading font-bold mb-4 glow-text" data-aos="fade-up">Server Information</h3>
+    <p class="text-gray-400 mb-8" data-aos="fade-up">Explore the unique blend of Economy and Slimefun</p>
+
+    <div class="lg:col-span-2 grid md:grid-cols-3 gap-6">
+      
+      <div class="glass p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+        <h4 class="font-semibold text-white">Slimefun Guide</h4>
+        <p class="text-gray-300 mt-2">Panduan lengkap untuk memahami fitur Slimefun—mulai dari mesin, energi, hingga item industri yang membentuk gameplay server.</p>
+      </div>
+
+      <div class="glass p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="font-semibold text-white">Player-Driven Economy</h4>
+        <p class="text-gray-300 mt-2">Marketplace bebas, shop antar pemain, dan harga yang terbentuk dari supply–demand.</p>
+      </div>
+
+      <div class="glass p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+        <h4 class="font-semibold text-white">Industrial Automation</h4>
+        <p class="text-gray-300 mt-2">Dukung produktivitasmu dengan generator, machine, dan autoprocessing Slimefun.</p>
+      </div>
+
+      <div class="glass p-6 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+        <h4 class="font-semibold text-white">Custom Resource & Crafting</h4>
+        <p class="text-gray-300 mt-2">Craft item unik yang tidak ada di vanilla—mulai dari energi, alat, armor, hingga mesin.</p>
+      </div>
+
+      <div class="glass p-6 rounded-xl" data-aos="fade-up" data-aos-delay="500">
+        <h4 class="font-semibold text-white">Balanced Gameplay</h4>
+        <p class="text-gray-300 mt-2">Ekonomi dan Slimefun dituning supaya progres tidak pay-to-win dan tetap fun bagi semua pemain.</p>
+      </div>
+
+      <div class="glass p-6 rounded-xl" data-aos="fade-up" data-aos-delay="600">
+        <h4 class="font-semibold text-white">Community Interaction</h4>
+        <p class="text-gray-300 mt-2">Event sosial, trading, collab project, dan kompetisi Slimefun tiap minggu.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery" class="py-16 bg-gradient-to-b from-transparent to-realityGray/40">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-heading font-bold mb-4 glow-text" data-aos="fade-up">Gallery</h3>
+    <p class="text-gray-400 mb-8" data-aos="fade-up">Snapshots from our world</p>
+    <div id="gallery-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- STAFF -->
+<section id="staff" class="py-16">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-heading font-bold glow-text mb-4" data-aos="fade-up">Staff</h3>
+    <p class="text-gray-400 mb-8" data-aos="fade-up">Meet the people behind RealityMC</p>
+    <div id="staff-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8"></div>
+  </div>
+</section>
+
+<!-- STORE -->
+<section id="store" class="py-16 bg-black/40">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-8">
+      <h3 class="text-3xl font-heading font-bold glow-text">Store</h3>
+      <p class="text-gray-400">Pilih rank yang kamu mau.</p>
+    </div>
+    <div id="store-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- BALANCE SHOP SECTION -->
+<section id="balanceshop" class="py-16 bg-black/40">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-8">
+<h3 class="text-3xl font-heading font-bold glow-text">Balance Shop</h3>
+<p class="text-gray-400">Beli uang in‑game dengan aman & cepat.</p>
+</div>
+<div id="balance-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+</div>
+</section>  
+
+<!-- CONNECT -->
+<section id="connect" class="py-14 bg-black/50" data-aos="zoom-in">
+  <div class="max-w-4xl mx-auto px-6">
+    
+    <div class="connect-card p-10 space-y-10" data-aos="fade-up">
+
+      <!-- HEADER -->
+      <div class="text-center">
+        <h3 class="text-3xl font-semibold text-white glow-strong mb-2">Ready to Join?</h3>
+        <p class="text-gray-300">Mainkan server kami sekarang!</p>
+      </div>
+
+      <!-- SERVER INFO GRID -->
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- SERVER ADDRESS -->
+        <div class="p-5 rounded-xl bg-black/40 border border-white/10 hover:border-realityOrange/80 transition">
+          <div class="text-xs text-gray-400 mb-1">Server Address</div>
+          <div class="font-mono text-white text-xl" id="server-ip"></div>
+          <button id="copy-ip" class="mt-4 w-full px-4 py-2 rounded-full btn-fire text-black font-semibold btn-glow">
+            Copy IP
+          </button>
+        </div>
+
+        <!-- PORT + VERSION -->
+        <div class="p-5 rounded-xl bg-black/40 border border-white/10 hover:border-realityOrange/80 transition space-y-4">
+          <div>
+            <div class="text-xs text-gray-400">Port</div>
+            <div class="text-white text-xl" id="server-port"></div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-400">Version</div>
+            <div class="text-white text-xl" id="server-version"></div>
+          </div>
+        </div>
+
+        <!-- PLAYERS -->
+        <div class="p-5 rounded-xl bg-black/40 border border-white/10 hover:border-realityOrange/80 transition flex flex-col justify-center items-center">
+          <div class="text-xs text-gray-400 mb-1">Players Online</div>
+          <div class="text-white text-3xl font-bold" id="players-count">—</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-6 text-center text-gray-400 bg-black/50 backdrop-blur-lg mt-16">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <span>© <span id="year"></span> RealityMC. All rights reserved.</span>
+    <div class="flex gap-4">
+      <a href="https://discord.gg/sKb3XYa4Ap" target="_blank" class="hover:text-yellow-400 transition">Discord</a>
+      <a href="https://chat.whatsapp.com/E5hy2dXHXBy30iH93xnO5O?mode=hqrt3" target="_blank" class="hover:text-yellow-400 transition">Whatsapp</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+// Contoh CONFIG supaya script jalan
+window.CONFIG = {
+  logo: "https://i.imgur.com/lQUz3t3.png",
+  serverIP: "reality.my.id",
+  port: "19132",
+  version: "1.21.1",
+  gallery: ["https://i.imgur.com/c4rULwV.png","https://i.imgur.com/Ow9GBNy.png","https://i.imgur.com/LmfcT2f.jpeg"],
+  staff: [
+    {name:"Irfan",role:"Founder",img:"https://i.imgur.com/UNg6C54.png"},
+    {name:"Huda",role:"Co-Founder",img:"https://i.imgur.com/DikrFu3.png"},
+    {name:"Nata",role:"Manager",img:"https://i.imgur.com/Ei86tSx.png"}
+  ]
+};
+
+AOS.init({ duration: 900, once: true });
+
+const cfg = window.CONFIG;
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('logo-img').src = cfg.logo;
+document.getElementById('server-ip').textContent = cfg.serverIP;
+document.getElementById('server-port').textContent = cfg.port;
+document.getElementById('server-version').textContent = cfg.version;
+
+// gallery
+const galleryGrid = document.getElementById('gallery-grid');
+(cfg.gallery||[]).forEach(src=>{
+  const d=document.createElement('div');
+  d.className='rounded-xl overflow-hidden glass hover:scale-[1.03] transition-transform duration-300';
+  d.setAttribute('data-aos','zoom-in');
+  d.innerHTML=`<img src="${src}" class="w-full h-48 img-cover" alt="gallery">`;
+  galleryGrid.appendChild(d);
+});
+
+// staff
+const staffGrid=document.getElementById('staff-grid');
+(cfg.staff||[]).forEach(s=>{
+  const d=document.createElement('div');
+  d.className='p-6 rounded-xl glass transition text-center';
+  d.setAttribute('data-aos','flip-up');
+  d.innerHTML=`
+    <div class="flex justify-center mb-4">
+    <img src="${s.img}" class="w-32 h-32 object-cover" alt="${s.name}"></div>
+    <div class="text-white font-semibold">${s.name}</div>
+    <div class="text-sm text-realityOrange">${s.role}</div>`;
+  staffGrid.appendChild(d);
+});
+
+// COPY IP
+document.getElementById('copy-ip').onclick=async()=>{
+  try{
+    await navigator.clipboard.writeText(cfg.serverIP+':'+cfg.port);
+    const b=document.getElementById('copy-ip');
+    b.textContent='Copied!'; setTimeout(()=>b.textContent='Copy',2000);
+  }catch(e){ alert('Failed to copy'); }
+};
+
+// STORE
+const storeItems = [
+{
+  id:'elite', title:'ᴠᴏʀɴɪх', price:'Rp 25.000',
+  commands:['/ᴘᴛɪᴍᴇ','/ᴘᴡᴇᴀᴛʜᴇʀ','/ꜱᴜɪᴄɪᴅᴇ','/ᴄʀᴀꜰᴛ','/ᴋɪᴛ','/ᴇᴄ','/ɴɪᴄᴋ'],
+  features:['ꜱᴇᴛʜᴏᴍᴇ 5','ᴄʟᴀɪᴍ/ʙʟᴏᴄᴋ ʟɪᴍɪᴛ: 10.000']
+},
+{
+  id:'master', title:'ѕᴏʟʀʏɴ', price:'Rp 50.000',
+  commands:['/ꜰʟʏ','/ᴘᴛɪᴍᴇ','/ᴘᴡᴇᴀᴛʜᴇʀ','/ꜱᴜɪᴄɪᴅᴇ','/ᴄʀᴀꜰᴛ','/ᴋɪᴛ','/ᴇᴄ','/ɴɪᴄᴋ','/ᴀɴᴠɪʟ','/ꜱᴍɪᴛʜɪɴɢᴛᴀʙʟᴇ','/ʜᴇᴀʟ','/ꜰᴇᴇᴅ','/ʜᴀᴛ'],
+  features:['ꜱᴇᴛʜᴏᴍᴇ 7','ᴄʟᴀɪᴍ/ʙʟᴏᴄᴋ ʟɪᴍɪᴛ: 15.000']
+},
+{
+  id:'epic', title:'ᴀᴜʀᴇᴛʜ', price:'Rp 80.000',
+  commands:['/ꜰʟʏ','/ᴘᴛɪᴍᴇ','/ᴘᴡᴇᴀᴛʜᴇʀ','/ꜱᴜɪᴄɪᴅᴇ','/ᴄʀᴀꜰᴛ','/ᴋɪᴛ','/ᴇᴄ','/ɴɪᴄᴋ','/ᴀɴᴠɪʟ','/ꜱᴍɪᴛʜɪɴɢᴛᴀʙʟᴇ','/ʜᴇᴀʟ','/ꜰᴇᴇᴅ','/ʜᴀᴛ','/ɪɴᴀᴍᴇ','/ʀᴇᴘᴀɪʀ','/ɢʀɪɴᴅꜱᴛᴏɴᴇ','/ʟᴏᴏᴍ','/ꜱᴛᴏɴᴇᴄᴜᴛᴛᴇʀ'],
+  features:['ꜱᴇᴛʜᴏᴍᴇ 15','ᴄʟᴀɪᴍ/ʙʟᴏᴄᴋ ʟɪᴍɪᴛ: 25.000']
+},
+{
+  id:'legend', title:'ᴍʏᴛʜɪᴄ', price:'Rp 125.000',
+  commands:['/ꜰʟʏ','/ᴘᴛɪᴍᴇ','/ᴘᴡᴇᴀᴛʜᴇʀ','/ꜱᴜɪᴄɪᴅᴇ','/ᴄʀᴀꜰᴛ','/ᴋɪᴛ','/ᴇᴄ','/ɴɪᴄᴋ','/ᴀɴᴠɪʟ','/ꜱᴍɪᴛʜɪɴɢᴛᴀʙʟᴇ','/ʜᴇᴀʟ','/ꜰᴇᴇᴅ','/ʜᴀᴛ','/ɪɴᴀᴍᴇ','/ʀᴇᴘᴀɪʀ','/ɢʀɪɴᴅꜱᴛᴏɴᴇ','/ʟᴏᴏᴍ','/ꜱᴛᴏɴᴇᴄᴜᴛᴛᴇʀ','/ᴛᴘ'],
+  features:['ꜱᴇᴛʜᴏᴍᴇ 25','ᴄʟᴀɪᴍ/ʙʟᴏᴄᴋ ʟɪᴍɪᴛ: 50.000']
+},
+{
+  id:'monolit', title:'ᴢᴇɴɪᴛʜ', price:'Rp 175.000',
+  commands:['/ꜰʟʏ','/ᴘᴛɪᴍᴇ','/ᴘᴡᴇᴀᴛʜᴇʀ','/ꜱᴜɪᴄɪᴅᴇ','/ᴄʀᴀꜰᴛ','/ᴋɪᴛ','/ᴇᴄ','/ɴɪᴄᴋ','/ᴀɴᴠɪʟ','/ꜱᴍɪᴛʜɪɴɢᴛᴀʙʟᴇ','/ʜᴇᴀʟ','/ꜰᴇᴇᴅ','/ʜᴀᴛ','/ɪɴᴀᴍᴇ','/ʀᴇᴘᴀɪʀ','/ɢʀɪɴᴅꜱᴛᴏɴᴇ','/ʟᴏᴏᴍ','/ꜱᴛᴏɴᴇᴄᴜᴛᴛᴇʀ','/ɪɴᴠꜱᴇᴇ','/ꜱᴜᴅᴏ','/ᴛᴘ'],
+  features:['ꜱᴇᴛʜᴏᴍᴇ 40','ᴄʟᴀɪᴍ/ʙʟᴏᴄᴋ ʟɪᴍɪᴛ: 80.000','ᴄᴜѕᴛᴏᴍ ᴘʀᴇꜰɪх +ʀᴘ10.000']
+},
+];
+
+// render store
+const storeGrid = document.getElementById('store-grid');
+storeItems.forEach(item=>{
+  const d=document.createElement('div');
+  d.className='p-6 rounded-xl glass';
+  d.setAttribute('data-aos','zoom-in');
+  d.innerHTML = `
+    <div class="flex items-center justify-between mb-3">
+      <div class="text-lg font-semibold">${item.title}</div>
+      <div class="text-sm text-monoAccentLight font-semibold">${item.price}</div>
+    </div>
+    <details class="text-sm text-gray-300 mb-3">
+      <summary class="cursor-pointer text-white font-medium">ᴄᴏᴍᴍᴀɴᴅs & ꜰᴇᴀᴛᴜʀᴇs</summary>
+    <div class="text-sm text-gray-300 mb-3">${item.commands.map(f=>'• '+f).join('<br>')}</div>
+    <div class="text-sm text-gray-300 mb-3">${item.features.map(f=>'• '+f).join('<br>')}</div>
+    </details>
+    <div class="flex justify-center mt-4">
+      <a href="https://wa.me/6288225394429" target="_blank" class="mt-4 w-full px-4 py-2 rounded-full btn-fire text-black font-semibold btn-glow text-center">Buy</a>
+    </div>
+  `;
+  storeGrid.appendChild(d);
+});
+
+  // BALANCE SHOP ITEMS
+const balanceItems = [
+{ amount: "$25k", price: "Rp 5.000" },
+{ amount: "$50k", price: "Rp 10.000" },
+{ amount: "$75k", price: "Rp 15.000" },
+{ amount: "$100k", price: "Rp 20.000" },
+{ amount: "$250k", price: "Rp 50.000" },
+{ amount: "$500k", price: "Rp 100.000" }
+];
+// RENDER BALANCE SHOP
+const balanceGrid = document.getElementById('balance-grid');
+balanceItems.forEach(item => {
+const d = document.createElement('div');
+d.className = 'p-6 rounded-xl glass';
+d.setAttribute('data-aos', 'zoom-in');
+d.innerHTML = `
+<div class="flex items-center justify-between mb-3">
+<div class="text-lg font-semibold">${item.amount}</div>
+<div class="text-sm text-monoAccentLight font-semibold">${item.price}</div>
+</div>
+<div class="flex justify-center mt-4">
+<a href="https://wa.me/6288225394429" target="_blank" class="mt-4 w-full px-4 py-2 rounded-full btn-fire text-black font-semibold btn-glow text-center">Buy</a>
+</div>
+`;
+balanceGrid.appendChild(d);
+});
+
+// Minecraft-MP API fetch
+const MPM_API_KEY = 'LsFupjQKndlGZ3eeiTzq5dJychYfrOJIDU6';
+const SERVER_ADDR = 'cfg.serverIP';
+async function fetchServerStatus(){
+  if(!MPM_API_KEY) return;
+  try{
+    const url = `https://minecraft-mp.com/api/?object=servers&element=detail&key=${MPM_API_KEY}&server=${SERVER_ADDR}`;
+    const r = await fetch(url);
+    if(!r.ok) throw new Error('network');
+    const data = await r.json();
+    const players = data.players ?? data.player ?? null;
+    const max = data.max_players ?? data.maxplayer ?? data.max ?? null;
+    const version = data.version ?? data.mcversion ?? cfg.version;
+    document.getElementById('players-count').textContent = players!==null ? `${players} / ${max||'2025'}` : '2025';
+    document.getElementById('server-version').textContent = version;
+  }catch(e){
+    console.warn('fetch failed', e);
+    document.getElementById('players-count').textContent = '—';
+  }
+}
+if(MPM_API_KEY) { fetchServerStatus(); setInterval(fetchServerStatus, 3000); }
+
+</script>
+</body>
+</html>
